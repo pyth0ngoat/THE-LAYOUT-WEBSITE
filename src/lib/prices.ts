@@ -1,0 +1,224 @@
+// ===========================================================
+// PRICES — THE ONLY FILE YOU NEED TO EDIT TO CHANGE PRICING
+// ===========================================================
+//
+// HOW TO EDIT (no coding knowledge needed):
+//   1. Find the line for the item you want to change.
+//   2. Change ONLY the number after the colon (":").
+//   3. Keep the comma at the end of the line.
+//   4. Save. The whole site (cards, modals, cart, totals) updates.
+//
+// RULES:
+//   - Numbers only. No "₹", no commas inside the number, no quotes.
+//     GOOD:  699        BAD:  ₹699   "699"   1,200
+//   - 0 means "free" / "included".
+//   - Do NOT delete or rename lines. Do NOT rename the keys on the left.
+//     If a line goes missing you'll see a warning in the browser console
+//     and prices may show as blank.
+// ===========================================================
+
+export const PRICES = {
+  // -------------------------------------------------------
+  // MAGAZINE PACKAGES — STANDARD (A4) format
+  // Key = page count.
+  // -------------------------------------------------------
+  sizes: {
+    "sz-4": 699, // 4 Pages
+    "sz-6": 799, // 6 Pages
+    "sz-8": 999, // 8 Pages
+    "sz-12": 1200, // 12 Pages
+    "sz-14": 1300, // 14 Pages
+    "sz-16": 1449, // 16 Pages
+    "sz-18": 1600, // 18 Pages
+    "sz-20": 1850, // 20 Pages
+  },
+
+  // -------------------------------------------------------
+  // MAGAZINE PACKAGES — MINI (A5) format
+  // Same page counts, smaller trim size, its own prices.
+  // -------------------------------------------------------
+  sizesMini: {
+    "sz-4-mini": 350, // 4 Pages (Mini)
+    "sz-6-mini": 450, // 6 Pages (Mini)
+    "sz-8-mini": 550, // 8 Pages (Mini)
+    "sz-12-mini": 600, // 12 Pages (Mini)
+    "sz-14-mini": 650, // 14 Pages (Mini)
+    "sz-16-mini": 750, // 16 Pages (Mini)
+    "sz-18-mini": 800, // 18 Pages (Mini)
+    "sz-20-mini": 999, // 20 Pages (Mini)
+  },
+
+
+  // -------------------------------------------------------
+  // ADD-ONS
+  // -------------------------------------------------------
+  addons: {
+    "add-wrap": 50, // Gift Wrap
+    "add-letter": 50, // Handwritten Letter
+    "add-combo": 80, // Combo (Wrap + Letter)
+  },
+
+  // -------------------------------------------------------
+  // CURATED COMBOS (flat bundle price shown to the customer)
+  // NOTE: the "You save ₹__" text lives in catalog.ts descriptions —
+  // update that wording there if you change these numbers.
+  // -------------------------------------------------------
+  combos: {
+    "combo-01": 699, // Look At Me
+    "combo-02": 799, // Birthday Bits
+    "combo-03": 849, // The Little Archive
+    "combo-04": 699, // The Pocket Edit
+    "combo-05": 1399, // The Double Trouble
+    "combo-06": 1699, // The Love Dream
+    "combo-07": 1399, // The Keepsake Edit
+    "combo-08": 1799, // The Treasure Basket
+    "combo-09": 2199, // The Layout Bundle
+  },
+
+  // -------------------------------------------------------
+  // POLAROID PACKS
+  // -------------------------------------------------------
+  polaroids: {
+    "pol-mini": 80, // Mini Pack (9 photos)
+    "pol-classic": 150, // Classic Pack (18 photos)
+    "pol-memory": 230, // Memory Pack (27 photos)
+    "pol-premium": 280, // Premium Pack (36 photos)
+  },
+
+  // -------------------------------------------------------
+  // POLAROID STRIPS — bundle pricing by HOW MANY strips picked.
+  // Individual strips have no price of their own; the total below
+  // is charged for that many strips together. Keep one line for every
+  // count up to the number of strips on the site (SITE.stripCount).
+  // -------------------------------------------------------
+  stripTiers: {
+    1: 100, // any 1 strip
+    2: 125, // any 2 strips
+    3: 175, // any 3 strips
+    4: 220, // any 4 strips
+    5: 275, // any 5 strips
+    6: 330, // any 6 strips
+    7: 375, // any 7 strips
+    8: 420, // any 8 strips
+    9: 460, // any 9 strips
+    10: 500, // any 10 strips
+    11: 550, // any 11 strips
+    12: 600, // any 12 strips
+  },
+
+  // The bundle packs shown as chips in the Polaroid Strips pricing banner
+  // (strip counts — each must have a line in stripTiers above).
+  stripBundlePacks: [1, 2, 3, 4, 5, 6, 8, 10, 12],
+
+  // -------------------------------------------------------
+  // DELIVERY
+  // -------------------------------------------------------
+  delivery: {
+    "del-std": 0, // Standard Delivery (free)
+    "del-exp": 100, // Express Shipping
+  },
+
+  // -------------------------------------------------------
+  // DELIVERY — POLAROIDS-ONLY CARTS
+  // Delivery prices when every paid item in the cart is a polaroid
+  // (THE IT POLAROIDS and/or Polaroid Packs). Any other cart uses the
+  // "delivery" prices above.
+  // -------------------------------------------------------
+  deliveryPolaroidsOnly: {
+    "del-std": 80, // Standard Delivery (polaroid shipping)
+    "del-exp": 180, // Express Shipping (₹100 express + ₹80 polaroid shipping)
+  },
+
+  // -------------------------------------------------------
+  // NEWSPAPER MAGAZINE (standalone keepsake)
+  // -------------------------------------------------------
+  newspaper: {
+    "news-mag": 400,
+  },
+
+  // -------------------------------------------------------
+  // POCKET MAGAZINE (standalone, strictly 6 pages, pocket-sized)
+  // -------------------------------------------------------
+  pocket: {
+    "pocket-mag": 350,
+  },
+
+  // -------------------------------------------------------
+  // FRIENDSHIP CARD (standalone) — selling price actually charged.
+  // Duo is priced so it saves ₹299 vs buying 2 Singles (2 × 399 − 499).
+  // -------------------------------------------------------
+  friendship: {
+    "friend-single": 399, // 1 Card
+    "friend-duo": 499, // 2 Cards — BESTIE SET
+  },
+
+  // -------------------------------------------------------
+  // FRIENDSHIP CARD — MRP shown struck-through next to the selling price.
+  // Purely cosmetic; the amount actually charged is PRICES.friendship above.
+  // -------------------------------------------------------
+  friendshipMrp: {
+    "friend-single": 599,
+    "friend-duo": 899,
+  },
+
+  // -------------------------------------------------------
+  // THE MEMORY CARD — bundle price by total cards selected.
+  // Customers may mix designs or repeat one design; the total
+  // quantity (1, 2, or 3) chooses the matching bundle price.
+  // -------------------------------------------------------
+  memoryCardTiers: {
+    1: 150, // any 1 Memory Card
+    2: 220, // any 2 Memory Cards
+    3: 300, // any 3 Memory Cards
+  },
+
+  // -------------------------------------------------------
+  // THE IT POLAROIDS — price per polaroid (1 photo each).
+  // Customers choose 1 to 100; the cart charges this × quantity.
+  // -------------------------------------------------------
+  itPolaroids: {
+    single: 120,
+  },
+
+  // -------------------------------------------------------
+  // THE LOVE STICKER BOOK — all-in-one bundle (book, 16 stickers,
+  // Lover Era Card, Card 04 licence, Strip 2).
+  // -------------------------------------------------------
+  stickerBook: {
+    "sticker-book-01": 1199,
+  },
+
+  // -------------------------------------------------------
+  // PRODUCT COUPONS — flat ₹ off, only valid when that product is in
+  // the cart (which product is set in catalog.ts → PRODUCT_COUPONS).
+  // -------------------------------------------------------
+  productCoupons: {
+    PATAKA200: 200,
+  },
+} as const;
+
+// ===========================================================
+// Internal helper — do not edit below this line.
+// ===========================================================
+type PriceGroup = keyof typeof PRICES;
+
+export function priceOf(group: PriceGroup, id: string | number): number {
+  const value = (PRICES[group] as Record<string | number, number | undefined>)[id];
+  if (typeof value !== "number") {
+    if (import.meta.env.DEV) {
+      console.warn(
+        `[prices.ts] Missing price for "${id}" in PRICES.${group}. ` +
+          `Check src/lib/prices.ts — a line may have been deleted or renamed.`,
+      );
+    }
+    return 0;
+  }
+  return value;
+}
+
+// Like priceOf, but for an optional cosmetic MRP group (e.g. "friendshipMrp")
+// — missing entries just mean "no strikethrough price to show", not an error.
+export function mrpOf(group: PriceGroup, id: string | number): number | undefined {
+  const value = (PRICES[group] as Record<string | number, number | undefined>)[id];
+  return typeof value === "number" ? value : undefined;
+}
